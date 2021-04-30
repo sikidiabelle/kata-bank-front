@@ -25,8 +25,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   getAccount(idAccount : number): Observable<Account> {
-    let params = new HttpParams().set('idAccount', String(idAccount));
-    return this.http.get<Account>(this.apiUrl + '/account/', {params})
+    return this.http.get<Account>(this.apiUrl + 'account/' + String(idAccount))
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -34,8 +33,7 @@ export class AccountService {
   }
 
   addTransaction(idAccount : number, transaction : Transaction): Observable<Account> {
-    let params = new HttpParams().set('idAccount', String(idAccount));
-    return this.http.put<Account>(this.apiUrl + '/account/', JSON.stringify(transaction), {params})
+    return this.http.put<Account>(this.apiUrl + 'account/' + JSON.stringify(idAccount) + '/addTransaction', transaction)
     .pipe(
       retry(1),
       catchError(this.handleError)

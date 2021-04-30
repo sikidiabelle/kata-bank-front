@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Account } from '../../models/account.model';
+import { Transaction } from '../../models/transaction.model';
 import { AccountService } from '../../services/account.service';
 
 @Component({
@@ -9,16 +10,13 @@ import { AccountService } from '../../services/account.service';
 })
 export class HomeComponent implements OnInit {
 
-  @Input() idAccount;
+  @Input() idAccount = 1;
   account : Account;
-
   constructor(private accountService : AccountService) {
 
   }
 
   ngOnInit(): void {
     this.accountService.getAccount(this.idAccount).subscribe(data => this.account = data);
-
   }
-
 }

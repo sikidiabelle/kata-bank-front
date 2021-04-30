@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand"routerLink="">
+        <img class="rounded" src="../../../assets/logo.png" alt="" width="75" height="50  ">Bonjour Eloi
+    </a>
+    <ul class="nav justify-content-end">
+        <li class="nav-item" routerLinkActive="active" >
+          <a class="nav-link" routerLink="home">
+            Historique des transactions
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" aria-current="page" routerLink="depot">Effectuer un dépot</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" aria-current="page" routerLink="retrait">Effectuer un retrait</a>
+        </li>
+        
+    </ul>
+</nav>
+
+
